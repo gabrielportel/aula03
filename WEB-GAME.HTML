@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Meu quebra-cabeça</title>
+    <style>
+      body  {
+        
+        background-color: aliceblue; 
+        
+        }
+     .bloco {
+       width: 40px;
+       height:40px;
+       display: table-cell;
+       text-align: center;
+       vertical-align: middle;
+       font-size: 25pt;
+       user-select: none;
+     }
+      .ativo {
+        background-color: chartreuse;
+      }
+
+      .inativo {
+        background-color: crimson;
+        color: darkgreen;
+      } 
+
+      .painel {
+        display:inline-flex; 
+        
+      } 
+
+      .controles  {
+        border-style: solid;
+        width: 450px;
+        padding: 4px;
+        background-color: mediumaquamarine;
+        
+        }
+        
+        .controles button {
+          border-radius: 11%;
+          background-color: rgb(119, 150, 175);
+          border: none;
+          font-size: 20pt;
+        } 
+
+        .tentativas  {
+          font-size: 27pt;
+        }
+
+        .mensagem  {
+          font-size: 28pt;
+          color: crimson;
+        }
+
+        .tabuleiro  {
+          border-style: solid;
+          background-color: blue;
+        }
+      
+    </style>
+  </head>
+  <body>
+    <div class="painel">
+      <div class="tabuleiro">
+        <div class="linha">
+          <div id="bloco1" class="bloco">1</div>
+          <div id="bloco2" class="bloco">2</div>
+          <div id="bloco3" class="bloco">3</div>
+        </div>
+        <div>
+          <div id="bloco4" class="bloco">4</div>
+          <div id="bloco5" class="bloco">5</div>
+          <div id="bloco6" class="bloco">6</div>
+        </div>
+        <div>
+          <div id="bloco7" class="bloco">7</div>
+          <div id="bloco8" class="bloco">8</div>
+          <div id="bloco9" class="bloco">9</div>
+        </div>
+      </div>
+      <div class="controles">
+        <div id="numTentativas" id="numtentativas">
+          0 tentativas
+        </div>
+        <button type="button">Iniciar</button>
+        <div id="mensagem" ></div>
+      </div>
+    </div>
+  </body>
+</html>
