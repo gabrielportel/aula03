@@ -61,6 +61,127 @@
         }
       
     </style>
+
+    <script>
+        var numtentativas = 0;
+        var iniciado = false;
+
+        function iniciar()  {
+           for(var i = 1; i <=9; i++) {
+           var bloco = document.getElementById("bloco"+1);
+           bloco.classList.remove("ativo");
+           bloco.classList.remove("inativo");
+
+        if(Math.round(Math.random()))  {
+            bloco.classList.add("ativo")
+        } else {
+            bloco.classList.add("inativo")
+        }
+     }
+
+        if(verificaVitoria())  {
+            iniciar();
+
+        }
+
+         numtentativas = -1;
+
+         incremwntarTentativas();
+
+           iniciado  = true;
+
+           exibirmMensagem("")
+
+        }
+
+        function verificaVitoria()  {
+           for(var i = 1; i <= 9; i++)  {
+            var bloco = document.getElementById("bloco"+1);
+            var perdeu = bloco.classList.contains("inativo");
+ 
+            if(perdeu)  {
+                return false;
+            }
+           }
+
+           return true;
+        }
+
+        function mudarBloco(numBloco)  {
+            var bloco = document.getElementById("bloco"+numBloco);
+
+        if(bloco.classList.contains("ativo"))  {
+            bloco.classList.remove("ativo")
+            bloco.classList.add("inativo")
+        } else if(bloco.classList.contains("inativo")) {
+            bloco.classList.remove("inativo")
+            bloco.classList.add("ativo")
+        }   
+      }
+      function incremwntarTentativas()  {
+          numtentativas++;
+          var tentativas = document.getElementById("numtentativas");
+          tentativas.inneHTML = numtentativas + " tentativas";
+      }
+
+       function exibirmMensagem(mensagem) {
+           var msgDiv = document.getElementById("mensagem");
+           msgDiv.inneHTML = mensagem;
+       }
+
+       function jogar(numBloco)  {
+           if(! iniciado) return
+
+         if(numBloco == 1) {
+            mudarBloco(1)
+            mudarBloco(2)
+            mudarBloco(4)
+         } else if(numBloco == 2) {
+            mudarBloco(1)
+            mudarBloco(2)
+            mudarBloco(3)
+            mudarBloco(5)
+         }else if(numBloco == 3) {
+            mudarBloco(2)
+            mudarBloco(3)
+            mudarBloco(6)
+         }else if(numBloco == 4) {
+            mudarBloco(1)
+            mudarBloco(4)
+            mudarBloco(5)
+            mudarBloco(7)
+         }else if(numBloco == 5) {
+            mudarBloco(2)
+            mudarBloco(4)
+            mudarBloco(5)
+            mudarBloco(6)
+            mudarBloco(8)
+         } }else if(numBloco == 6) {
+            mudarBloco(3)
+            mudarBloco(5)
+            mudarBloco(6)
+            mudarBloco(9)
+         } }else if(numBloco == 7) {
+            mudarBloco(4)
+            mudarBloco(7)
+            mudarBloco(8)    
+         } }else if(numBloco == 8) {
+            mudarBloco(5)
+            mudarBloco(7)
+            mudarBloco(8)
+            mudarBloco(9)
+         } }else if(numBloco == 9) {
+            mudarBloco(6)
+            mudarBloco(8)
+            mudarBloco(9)
+         }
+         incrementarTentativas();
+         if(verificarVitoria())  {
+             exibirMensagem("venceu!!")
+             iniciado = false;
+         }
+        }
+       </script>                         
   </head>
   <body>
     <div class="painel">
